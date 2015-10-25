@@ -49,6 +49,7 @@ var app = {
 
         var img = document.createElement("img");
         img.src = "./img/"+currentString;
+        img.id = "gridpicture";
         link.appendChild(img);
         document.body.appendChild(link); 
         }
