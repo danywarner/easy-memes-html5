@@ -24,6 +24,13 @@ function goToGrid() {
     alert("back");
 }
 function shareMeme() {
-    alert("sharing");
+  navigator.screenshot.URI(function(error,res){
+  if(error){
+    console.error(error);
+  }else{
+    img = '<img style="width:50%;" src="'+res.URI+'">';
+    document.body.innerHTML = img;
+  }
+},50);
 }
 window.addEventListener("load", start, false);
