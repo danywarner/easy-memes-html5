@@ -1,4 +1,4 @@
-#memeListTitle {
+h3 {
     text-align: center;
     margin-top: 10px;
     padding: 10px;
@@ -10,4 +10,17 @@ img {
     width: 97px;
     height: 97px;
     margin: 2px;
+}
+
+#thumbnail {
+     width: 300px;
+    height: 300px;
+}
+
+canvas {
+    border: 1px dotted #aaa;
+    float: left;
+}
+textarea {
+    float: left;
 }

@@ -44,7 +44,7 @@ var app = {
         {
         var currentString = strings[k]
         var link = document.createElement("a");
-        link.href = "#";
+        link.href = "memeedit.html?meme="+currentString;
         link.alt = currentString;
 
         var img = document.createElement("img");
