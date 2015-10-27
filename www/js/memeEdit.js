@@ -41,6 +41,10 @@ function wrapText(context, text, x, y, maxWidth, lineHeight) {
         context.strokeText(line, x, y);
 }
 
+function send() {
+	window.plugins.socialsharing.share('Message only');
+}
+
 function crop(){
 	var src=window.location.href;
 		src=src.substring(126,src.length);
@@ -65,6 +69,8 @@ function crop(){
 		wrapText(ctx, bottomText.value.toUpperCase(), 250, 430, 500, 50); 
 
 		img.src = canvas.toDataURL();
+		window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,'+canvas.toDataURL(), null);
+		//window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,R0lGODlhDAAMALMBAP8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUKAAEALAAAAAAMAAwAQAQZMMhJK7iY4p3nlZ8XgmNlnibXdVqolmhcRQA7', null);
 }
 
 window.addEventListener("load", start, false);
