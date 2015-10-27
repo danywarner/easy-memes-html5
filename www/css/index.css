@@ -7,6 +7,10 @@
     font-family: "San Francisco";
     border-bottom: 1px solid #C2C2C2;
 }
+#canvas {
+    margin-top: 20px;
+    visibility: hidden;
+}
 
 #BackToGrid {
     color: #0F79FA;
@@ -52,6 +56,9 @@ h3 {
     padding-top: 6px;
 }
 
+#imgcrop {
+    border: 1px solid red;
+}
 
 
 /* #### iPhone 5 Portrait or Landscape #### */

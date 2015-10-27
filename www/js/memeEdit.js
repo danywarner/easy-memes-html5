@@ -1,7 +1,7 @@
 function start(){
 	var memeContainer = document.getElementById("memeContainer");
 	var src=window.location.href;
-	src=src.substring(126,src.length)
+	src=src.substring(126,src.length);
 	var img = document.createElement("img");
     img.src = "./img/"+src;
     img.id = "thumbnail";
@@ -25,12 +25,38 @@ function goToGrid() {
 }
 function shareMeme() {
   navigator.screenshot.URI(function(error,res){
-  if(error){
-    console.error(error);
-  }else{
-    img = '<img style="width:50%;" src="'+res.URI+'">';
-    document.body.innerHTML = img;
-  }
-},50);
+  	if(error){
+    	console.error(error);
+  	}else{
+  		
+	}
+  },50);
 }
+
+function crop(){
+	var src=window.location.href;
+		src=src.substring(126,src.length);
+  		var source = "img/"+src;
+	  	var img = document.getElementById("imgcrop");
+	  	var topText = document.getElementById("topText");
+	  	var bottomText = document.getElementById("bottomText");
+	    img.src = source;//"img/awesomeawkward.jpg";// res.URI;
+		var canvas = document.getElementById('canvas');
+		canvas.width = 500;
+	    canvas.height = 500;
+		var ctx = canvas.getContext('2d');
+	    ctx.drawImage(img, 0,0,500,500, 0,0,500,500);
+	    ctx.lineWidth = 60;  
+	    ctx.font = 'bold ' +50+ 'px  Helvetica';
+	    ctx.lineWidth = 3;
+		ctx.strokeStyle = "black";
+    	ctx.textAlign = 'center';
+    	ctx.fillStyle = "#ffffff";
+    	ctx.textBaseline = 'bottom';
+	    ctx.fillText(topText.value.toUpperCase(),250,100); 
+	    ctx.textBaseline="top"; 
+		ctx.fillText(bottomText.value.toUpperCase(),250,400); 
+		img.src = canvas.toDataURL();
+}
+
 window.addEventListener("load", start, false);
