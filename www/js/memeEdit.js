@@ -1,9 +1,22 @@
+var fuente;
+var imageData;
 function start(){
 	var memeContainer = document.getElementById("memeContainer");
 	var src=window.location.href;
-	src=src.substring(126,src.length);
+	var i = src.search("meme=")+5;
+	var f = src.search(".jpg")+4;
+	fuente=src.substring(i,f);
+	alert(fuente);
+
 	var img = document.createElement("img");
-    img.src = "./img/"+src;
+	if(fuente == "abcxyz.jpg") {
+		var i2 = src.search("abcxyz=")+7;
+		imageData = src.substring(i2,src.length);
+		img.src = imageData;
+	}
+	else{
+    	img.src = "./img/"+fuente;
+    }
     img.id = "thumbnail";
     memeContainer.appendChild(img);
 
@@ -41,18 +54,21 @@ function wrapText(context, text, x, y, maxWidth, lineHeight) {
         context.strokeText(line, x, y);
 }
 
-function send() {
-	window.plugins.socialsharing.share('Message only');
-}
+
+
 
 function crop(){
-	var src=window.location.href;
-		src=src.substring(126,src.length);
-  		var source = "img/"+src;
+		var src=fuente;
+		if(src!="abcxyz.jpg"){
+  			src = "img/"+src;
+		}
+		else{
+			src = imageData;
+		}
 	  	var img = document.getElementById("imgcrop");
 	  	var topText = document.getElementById("topText");
 	  	var bottomText = document.getElementById("bottomText");
-	    img.src = source;
+	    img.src = src;
 		var canvas = document.getElementById('canvas');
 		canvas.width = 500;
 	    canvas.height = 500;

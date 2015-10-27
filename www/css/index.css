@@ -7,8 +7,15 @@
     font-family: "San Francisco";
     border-bottom: 1px solid #C2C2C2;
 }
+
+#memeListTitle{
+    padding-top: 10px;
+}
+#memegrid {
+    margin-top: -20px;
+}
+
 #canvas {
-    margin-top: 20px;
     display: none;
 }
 
@@ -18,6 +25,10 @@
     display: inline;
     margin-left: 7px;
     text-decoration: none;
+}
+
+#cameraButton {
+    background: url(img/camera.png);
 }
 
 h3 {
@@ -59,8 +70,8 @@ h3 {
 #imgcrop {
     border: 1px solid red;
   
-    display: none;
-}
+/*    display: none;
+*/}
 
 
 /* #### iPhone 5 Portrait or Landscape #### */

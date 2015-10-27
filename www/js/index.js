@@ -1,23 +1,23 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+function takePicture(){
+    navigator.camera.getPicture(onSuccess, onFail, { 
+        quality: 50,
+        allowEdit:true,
+        targetWidth: 500,
+        targetHeight: 500,
+        destinationType: Camera.DestinationType.DATA_URL
+        });
+}
 
+function onSuccess(imageData) { 
+    var base64= "data:image/jpeg;base64," + imageData;
+    window.location.replace("memeedit.html?meme=abcxyz.jpg&abcxyz="+base64);
+    //var image = document.getElementById('thumbnail');
+    //image.src = "data:image/jpeg;base64," + imageData;
+}
 
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
 
 var app = {
     // Application Constructor
@@ -33,6 +33,7 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
+    
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
