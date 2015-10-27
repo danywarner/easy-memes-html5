@@ -5,7 +5,6 @@ function start(){
 	var img = document.createElement("img");
     img.src = "./img/"+src;
     img.id = "thumbnail";
-    //document.body.appendChild(img); 
     memeContainer.appendChild(img);
 
     var top = document.createElement("textarea");
@@ -20,17 +19,26 @@ function start(){
 
 } 
 
-function goToGrid() {
-    alert("back");
-}
-function shareMeme() {
-  navigator.screenshot.URI(function(error,res){
-  	if(error){
-    	console.error(error);
-  	}else{
-  		
-	}
-  },50);
+function wrapText(context, text, x, y, maxWidth, lineHeight) {
+        var words = text.split(' ');
+        var line = '';
+
+        for(var n = 0; n < words.length; n++) {
+          var testLine = line + words[n] + ' ';
+          var metrics = context.measureText(testLine);
+          var testWidth = metrics.width;
+          if (testWidth > maxWidth && n > 0) {
+            context.fillText(line, x, y);
+            context.strokeText(line, x, y);
+            line = words[n] + ' ';
+            y += lineHeight;
+          }
+          else {
+            line = testLine;
+          }
+        }
+        context.fillText(line, x, y);
+        context.strokeText(line, x, y);
 }
 
 function crop(){
@@ -40,10 +48,11 @@ function crop(){
 	  	var img = document.getElementById("imgcrop");
 	  	var topText = document.getElementById("topText");
 	  	var bottomText = document.getElementById("bottomText");
-	    img.src = source;//"img/awesomeawkward.jpg";// res.URI;
+	    img.src = source;
 		var canvas = document.getElementById('canvas');
 		canvas.width = 500;
 	    canvas.height = 500;
+
 		var ctx = canvas.getContext('2d');
 	    ctx.drawImage(img, 0,0,500,500, 0,0,500,500);
 	    ctx.font = 'bold 55px Helvetica';
@@ -51,10 +60,9 @@ function crop(){
 		ctx.strokeStyle = "black";
     	ctx.textAlign = 'center';
     	ctx.fillStyle = "#ffffff";
-	    ctx.fillText(topText.value.toUpperCase(),250,52); 
-	    ctx.strokeText(topText.value.toUpperCase(),250,52); 
-		ctx.fillText(bottomText.value.toUpperCase(),250,430); 
-		ctx.strokeText(bottomText.value.toUpperCase(),250,430); 
+
+    	wrapText(ctx, topText.value.toUpperCase(), 250, 52, 500, 50);
+		wrapText(ctx, bottomText.value.toUpperCase(), 250, 430, 500, 50); 
 
 		img.src = canvas.toDataURL();
 }
