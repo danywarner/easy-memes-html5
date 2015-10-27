@@ -6,7 +6,6 @@ function start(){
 	var i = src.search("meme=")+5;
 	var f = src.search(".jpg")+4;
 	fuente=src.substring(i,f);
-	alert(fuente);
 
 	var img = document.createElement("img");
 	if(fuente == "abcxyz.jpg") {

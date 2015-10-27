@@ -8,12 +8,23 @@
     border-bottom: 1px solid #C2C2C2;
 }
 
-#memeListTitle{
-    padding-top: 10px;
+
+#firstHeader {
+    margin-top: 25px;
 }
+
+
+
+
 #memegrid {
-    margin-top: -20px;
+    margin-top: 10px;
+    clear: both;
+    border-top: 1px solid #C2C2C2;
 }
+
+
+
+
 
 #canvas {
     display: none;
@@ -27,15 +38,8 @@
     text-decoration: none;
 }
 
-#cameraButton {
-    background: url(img/camera.png);
-}
 
-h3 {
-    text-align: center;
-    font-family: 'San Francisco';
-    font-size: 1.4em;
-}
+
 @font-face{
     font-family: 'San Francisco';
     src:url('../fonts/SanFranciscoR.ttf');
@@ -46,12 +50,7 @@ h3 {
     margin-left: 50px;
 }
 
-#gridpicture {
-    float: left;
-    width: 97px;
-    height: 97px;
-    margin: 2px;
-}
+
 
 #footer {
     border-top: 1px solid #C2C2C2;
@@ -69,18 +68,111 @@ h3 {
 
 #imgcrop {
     border: 1px solid red;
-  
-/*    display: none;
-*/}
+    display: none;
+}
 
 
 /* #### iPhone 5 Portrait or Landscape #### */
 @media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
     #thumbnail, #memecontainer {
-     width: 300px;
-    height: 300px;
-     float: left;
-     padding-top:10px;
+        width: 300px;
+        height: 300px;
+        float: left;
+        padding-top:10px;
+    }
+    #memeListTitle{
+        float: left;
+        padding-left: 70px;
+        margin-top: -10px;
+    }
+    #libraryButton {
+        float: left;
+        width: 30px;
+        height: 30px;
+        border: none;
+        margin-left: 210px;
+        margin-top: 10px;
+    }
+
+    #cameraButton {
+        float: left;
+        width: 30px;
+        height: 30px;
+        border: none;
+        margin-left: 25px;
+        margin-top: 10px;
+    }
+
+    #gridpicture {
+        float: left;
+        width: 97px;
+        height: 97px;
+        margin: 2px;
+    }
+
+    #topText, #bottomText {
+        float: left;
+        border-style: none;
+        font-size: 2em;
+        margin-top: -300px;
+        margin-left: 0px;
+        margin-right: 0px;
+        color: #FFF;
+        background: rgba(255, 255, 255, 0);
+        font-family: Helvetica;
+        color: black;
+       -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+       -webkit-text-stroke-width: 2px;
+       -webkit-text-stroke-color: black;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        width: 300px;
+        height: 150px;
+    }
+
+    #bottomText {
+        margin-top: -80px;
+        height: 80px;
+    }
+}
+
+/* #### iPhone 6 and 6 plus Portrait or Landscape #### */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3){
+  #thumbnail, #memecontainer {
+        width: 300px;
+        height: 300px;
+        float: left;
+        padding-top:10px;
+    }
+    #memeListTitle{
+        float: left;
+        padding-left: 70px;
+        margin-top: -10px;
+    }
+    #libraryButton {
+        float: left;
+        width: 30px;
+        height: 30px;
+        border: none;
+        margin-left: 210px;
+        margin-top: 10px;
+    }
+
+    #cameraButton {
+        float: left;
+        width: 30px;
+        height: 30px;
+        border: none;
+        margin-left: 25px;
+        margin-top: 10px;
+    }
+
+    #gridpicture {
+        float: left;
+        width: 97px;
+        height: 97px;
+        margin: 2px;
     }
 
     #topText, #bottomText {
@@ -114,10 +206,39 @@ h3 {
 @media screen and (min-device-width: 768px) and (max-device-width: 1024px){
 
     #thumbnail, #memecontainer {
-         width: 750px;
-        height: 750px;
+         width: 650px;
+        height: 650px;
         float:left;
         border-top: 10px;
+    }
+
+    #gridpicture {
+        float: left;
+        width:  103px;
+        height: 103px;
+        margin: 2px;
+    }
+    #memeListTitle{
+        float: left;
+        padding-left: 70px;
+        margin-top: -10px;
+    }
+    #libraryButton {
+        float: left;
+        width: 30px;
+        height: 30px;
+        border: none;
+        margin-left: 210px;
+        margin-top: 10px;
+    }
+
+    #cameraButton {
+        float: left;
+        width: 30px;
+        height: 30px;
+        border: none;
+        margin-left: 25px;
+        margin-top: 10px;
     }
 
     #topText, #bottomText {
@@ -144,9 +265,4 @@ h3 {
     #bottomText {
         margin-top: -160px;
     }
-}
-
-/* #### iPhone 6 and 6 plus Portrait or Landscape #### */
-@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3){
-  /* some CSS here */
 }

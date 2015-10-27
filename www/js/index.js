@@ -8,6 +8,17 @@ function takePicture(){
         });
 }
 
+function getPictureFromLibrary(){
+     navigator.camera.getPicture(onSuccess, onFail, { 
+        quality: 50,
+        allowEdit:true,
+        targetWidth: 500,
+        targetHeight: 500,
+        sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+        destinationType: Camera.DestinationType.DATA_URL
+        });
+}
+
 function onSuccess(imageData) { 
     var base64= "data:image/jpeg;base64," + imageData;
     window.location.replace("memeedit.html?meme=abcxyz.jpg&abcxyz="+base64);
@@ -16,7 +27,7 @@ function onSuccess(imageData) {
 }
 
 function onFail(message) {
-    alert('Failed because: ' + message);
+    //alert('Failed because: ' + message);
 }
 
 var app = {

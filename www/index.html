@@ -11,8 +11,11 @@
     </head>
     <body>
         <div class="app">
-            <h3 id="memeListTitle">Select a picture</h3>
-            <input type="submit" id="cameraButton" onclick="takePicture()"></button>
+            <div id="firstHeader">
+            
+            <a id="libraryButton" onClick="getPictureFromLibrary()"><img src="img/organize.png" height="23" width="30"></a>
+            <a id="cameraButton" onClick="takePicture()"><img src="img/camera.png" height="23" width="30"></a>
+            </div>
             <div id="memegrid"></div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
