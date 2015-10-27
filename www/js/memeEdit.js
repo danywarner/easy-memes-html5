@@ -56,7 +56,6 @@ function crop(){
 		var canvas = document.getElementById('canvas');
 		canvas.width = 500;
 	    canvas.height = 500;
-
 		var ctx = canvas.getContext('2d');
 	    ctx.drawImage(img, 0,0,500,500, 0,0,500,500);
 	    ctx.font = 'bold 55px Helvetica';
@@ -65,8 +64,8 @@ function crop(){
     	ctx.textAlign = 'center';
     	ctx.fillStyle = "#ffffff";
 
-    	wrapText(ctx, topText.value.toUpperCase(), 250, 52, 500, 50);
-		wrapText(ctx, bottomText.value.toUpperCase(), 250, 430, 500, 50); 
+    	wrapText(ctx, topText.value.toUpperCase(), 250, 52, 510, 50);
+		wrapText(ctx, bottomText.value.toUpperCase(), 250, 430, 510, 50); 
 
 		img.src = canvas.toDataURL();
 		window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,'+canvas.toDataURL(), null);
