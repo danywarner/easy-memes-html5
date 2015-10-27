@@ -46,16 +46,16 @@ function crop(){
 	    canvas.height = 500;
 		var ctx = canvas.getContext('2d');
 	    ctx.drawImage(img, 0,0,500,500, 0,0,500,500);
-	    ctx.lineWidth = 60;  
 	    ctx.font = 'bold ' +50+ 'px  Helvetica';
-	    ctx.lineWidth = 3;
+	    ctx.lineWidth = 2;
 		ctx.strokeStyle = "black";
     	ctx.textAlign = 'center';
     	ctx.fillStyle = "#ffffff";
-    	ctx.textBaseline = 'bottom';
 	    ctx.fillText(topText.value.toUpperCase(),250,100); 
-	    ctx.textBaseline="top"; 
+	    ctx.strokeText(topText.value.toUpperCase(),250,100); 
 		ctx.fillText(bottomText.value.toUpperCase(),250,400); 
+		ctx.strokeText(bottomText.value.toUpperCase(),250,400); 
+
 		img.src = canvas.toDataURL();
 }
 

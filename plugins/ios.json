@@ -4,46 +4,8 @@
         "uninstalled": []
     },
     "config_munge": {
-        "files": {
-            "framework": {
-                "parents": {
-                    "Social.framework": [
-                        {
-                            "xml": true,
-                            "count": 1
-                        }
-                    ],
-                    "MessageUI.framework": [
-                        {
-                            "xml": true,
-                            "count": 1
-                        }
-                    ]
-                }
-            },
-            "config.xml": {
-                "parents": {
-                    "/*": [
-                        {
-                            "xml": "<feature name=\"SocialSharing\"><param name=\"ios-package\" value=\"SocialSharing\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Screenshot\"><param name=\"ios-package\" value=\"Screenshot\" /></feature>",
-                            "count": 1
-                        }
-                    ]
-                }
-            }
-        }
+        "files": {}
     },
-    "installed_plugins": {
-        "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
-        },
-        "com.darktalker.cordova.screenshot": {
-            "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
-        }
-    },
+    "installed_plugins": {},
     "dependent_plugins": {}
 }
