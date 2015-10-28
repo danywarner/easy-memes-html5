@@ -6,16 +6,24 @@
     font-family: "San Francisco";
     border-bottom: 1px solid #C2C2C2;
 }
+
 #memegrid {
     margin-top: 10px;
     float: left;
     border-top: 1px solid #C2C2C2;
 }
 
+#backwardButton{
+    margin-left: 40px;
+}
+
+#forwardButton{
+    margin-left: 160px;
+}
+
 #gridFooter{
     height: 44px;
     width: 300px;
-    border: 1px solid yellow;
     clear:both;
 }
 
