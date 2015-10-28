@@ -170,8 +170,8 @@
     #topText, #bottomText {
         float: left;
         border-style: none;
-        font-size: 2em;
-        margin-top: -300px;
+        font-size: 2.2em;
+        margin-top: -360px;
         margin-left: 0px;
         margin-right: 0px;
         color: #FFF;
@@ -184,7 +184,7 @@
         text-transform: uppercase;
         font-weight: bold;
         text-align: center;
-        width: 300px;
+        width: 360px;
         height: 150px;
     }
 
@@ -203,8 +203,8 @@
 /* 6+ AND 6s+ */
 @media (min-device-height: 736px) and (min-device-width: 414px) {
   #thumbnail, #memecontainer {
-        width: 300px;
-        height: 300px;
+        width: 397px;
+        height: 397px;
         float: left;
         padding-top:10px;
     }
@@ -218,7 +218,7 @@
         width: 30px;
         height: 30px;
         border: none;
-        margin-left: 210px;
+        margin-left: 300px;
         margin-top: 10px;
     }
 
@@ -242,7 +242,7 @@
         float: left;
         border-style: none;
         font-size: 2em;
-        margin-top: -300px;
+        margin-top: -395px;
         margin-left: 0px;
         margin-right: 0px;
         color: #FFF;
@@ -255,13 +255,20 @@
         text-transform: uppercase;
         font-weight: bold;
         text-align: center;
-        width: 300px;
+        width: 400px;
         height: 150px;
     }
 
     #bottomText {
-        margin-top: -80px;
+        margin-top: -75px;
         height: 80px;
+    }
+     #footer {
+        border-top: 1px solid #C2C2C2;
+        margin-top: 630px;
+        margin-right: -8px;
+        margin-left: -8px;
+        padding-left: 15px;
     }
 }
 /*johan
