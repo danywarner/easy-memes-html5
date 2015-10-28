@@ -50,45 +50,36 @@
     display: none;
 }
 
-/* #### iPhone 4s */
-@media (device-height: 480px) and (device-width: 320px) {
-    #thumbnail, #memecontainer {
-        width: 300px;
-        height: 300px;
-        float: left;
-        padding-top:10px;
-    }
-    #memeListTitle{
-        float: left;
-        padding-left: 70px;
-        margin-top: -10px;
-    }
-    #libraryButton {
-        float: left;
-        width: 30px;
-        height: 30px;
-        border: none;
-        margin-left: 210px;
-        margin-top: 10px;
-    }
+ #thumbnail, #memecontainer {
+    float: left;
+    padding-top:10px;
+    width: 300px;
+    height: 300px;
+}
+#libraryButton {
+    float: left;
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin-left: 210px;
+    margin-top: 10px;
+}
+#cameraButton {
+    float: left;
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+#gridpicture {
+    float: left;
+    width: 97px;
+    height: 97px;
+    margin: 2px;
+}
 
-    #cameraButton {
-        float: left;
-        width: 30px;
-        height: 30px;
-        border: none;
-        margin-left: 25px;
-        margin-top: 10px;
-    }
-
-    #gridpicture {
-        float: left;
-        width: 97px;
-        height: 97px;
-        margin: 2px;
-    }
-
-    #topText, #bottomText {
+#topText, #bottomText {
         float: left;
         border-style: none;
         font-size: 2em;
@@ -107,93 +98,35 @@
         text-align: center;
         width: 300px;
         height: 150px;
-    }
+}
 
-    #bottomText {
-        margin-top: -80px;
-        height: 80px;
-    }
+#bottomText {
+    margin-top: -80px;
+    height: 80px;
+}
 
-    #footer {
+#footer {
         border-top: 1px solid #C2C2C2;
         margin-top: 370px;
         margin-right: -8px;
         margin-left: -8px;
         padding-left: 15px;
     }
+
+/* #### iPhone 4s */
+@media (device-height: 480px) and (device-width: 320px) {
+
+    #footer {
+        margin-top: 370px;
+    }
 }
 
 
 /* #### iPhone 5 Portrait or Landscape #### */
 @media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
-    #thumbnail, #memecontainer {
-        width: 300px;
-        height: 300px;
-        float: left;
-        padding-top:10px;
-    }
-    #memeListTitle{
-        float: left;
-        padding-left: 70px;
-        margin-top: -10px;
-    }
-    #libraryButton {
-        float: left;
-        width: 30px;
-        height: 30px;
-        border: none;
-        margin-left: 210px;
-        margin-top: 10px;
-    }
-
-    #cameraButton {
-        float: left;
-        width: 30px;
-        height: 30px;
-        border: none;
-        margin-left: 25px;
-        margin-top: 10px;
-    }
-
-    #gridpicture {
-        float: left;
-        width: 97px;
-        height: 97px;
-        margin: 2px;
-    }
-
-    #topText, #bottomText {
-        float: left;
-        border-style: none;
-        font-size: 2em;
-        margin-top: -300px;
-        margin-left: 0px;
-        margin-right: 0px;
-        color: #FFF;
-        background: rgba(255, 255, 255, 0);
-        font-family: Helvetica;
-        color: black;
-       -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-       -webkit-text-stroke-width: 2px;
-       -webkit-text-stroke-color: black;
-        text-transform: uppercase;
-        font-weight: bold;
-        text-align: center;
-        width: 300px;
-        height: 150px;
-    }
-
-    #bottomText {
-        margin-top: -80px;
-        height: 80px;
-    }
-
+    
     #footer {
-        border-top: 1px solid #C2C2C2;
         margin-top: 449px;
-        margin-right: -8px;
-        margin-left: -8px;
-        padding-left: 15px;
     }
 }
 
@@ -202,70 +135,24 @@
   #thumbnail, #memecontainer {
         width: 360px;
         height: 360px;
-        float: left;
-        padding-top:10px;
-    }
-    #memeListTitle{
-        float: left;
-        padding-left: 70px;
-        margin-top: -10px;
     }
     #libraryButton {
-        float: left;
-        width: 30px;
-        height: 30px;
-        border: none;
         margin-left: 265px;
-        margin-top: 10px;
-    }
-
-    #cameraButton {
-        float: left;
-        width: 30px;
-        height: 30px;
-        border: none;
-        margin-left: 25px;
-        margin-top: 10px;
     }
 
     #gridpicture {
-        float: left;
         width: 85px;
         height: 85px;
-        margin: 2px;
     }
 
     #topText, #bottomText {
-        float: left;
-        border-style: none;
         font-size: 2.2em;
         margin-top: -360px;
-        margin-left: 0px;
-        margin-right: 0px;
-        color: #FFF;
-        background: rgba(255, 255, 255, 0);
-        font-family: Helvetica;
-        color: black;
-       -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-       -webkit-text-stroke-width: 2px;
-       -webkit-text-stroke-color: black;
-        text-transform: uppercase;
-        font-weight: bold;
-        text-align: center;
         width: 360px;
-        height: 150px;
     }
 
-    #bottomText {
-        margin-top: -80px;
-        height: 80px;
-    }
     #footer {
-        border-top: 1px solid #C2C2C2;
         margin-top: 555px;
-        margin-right: -8px;
-        margin-left: -8px;
-        padding-left: 15px;
     }
 }
 /* 6+ AND 6s+ */
@@ -273,70 +160,26 @@
   #thumbnail, #memecontainer {
         width: 397px;
         height: 397px;
-        float: left;
-        padding-top:10px;
-    }
-    #memeListTitle{
-        float: left;
-        padding-left: 70px;
-        margin-top: -10px;
     }
     #libraryButton {
-        float: left;
-        width: 30px;
-        height: 30px;
-        border: none;
         margin-left: 300px;
-        margin-top: 10px;
-    }
-
-    #cameraButton {
-        float: left;
-        width: 30px;
-        height: 30px;
-        border: none;
-        margin-left: 25px;
-        margin-top: 10px;
     }
 
     #gridpicture {
-        float: left;
         width: 95px;
         height: 95px;
-        margin: 2px;
     }
 
     #topText, #bottomText {
-        float: left;
-        border-style: none;
-        font-size: 2em;
         margin-top: -395px;
-        margin-left: 0px;
-        margin-right: 0px;
-        color: #FFF;
-        background: rgba(255, 255, 255, 0);
-        font-family: Helvetica;
-        color: black;
-       -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-       -webkit-text-stroke-width: 2px;
-       -webkit-text-stroke-color: black;
-        text-transform: uppercase;
-        font-weight: bold;
-        text-align: center;
         width: 400px;
-        height: 150px;
     }
 
     #bottomText {
         margin-top: -75px;
-        height: 80px;
     }
      #footer {
-        border-top: 1px solid #C2C2C2;
         margin-top: 630px;
-        margin-right: -8px;
-        margin-left: -8px;
-        padding-left: 15px;
     }
 }
 /*johan
@@ -344,58 +187,19 @@
   #thumbnail, #memecontainer {
         width: 300px;
         height: 300px;
-        float: left;
-        padding-top:10px;
-    }
-    #memeListTitle{
-        float: left;
-        padding-left: 70px;
-        margin-top: -10px;
     }
     #libraryButton {
-        float: left;
-        width: 30px;
-        height: 30px;
-        border: none;
         margin-left: 210px;
-        margin-top: 10px;
-    }
-
-    #cameraButton {
-        float: left;
-        width: 30px;
-        height: 30px;
-        border: none;
-        margin-left: 25px;
-        margin-top: 10px;
     }
 
     #gridpicture {
-        float: left;
         width: 97px;
         height: 97px;
-        margin: 2px;
     }
 
     #topText, #bottomText {
-        float: left;
-        border-style: none;
-        font-size: 2em;
         margin-top: -300px;
-        margin-left: 0px;
-        margin-right: 0px;
-        color: #FFF;
-        background: rgba(255, 255, 255, 0);
-        font-family: Helvetica;
-        color: black;
-       -webkit-text-fill-color: white; /* Will override color (regardless of order) 
-       -webkit-text-stroke-width: 2px;
-       -webkit-text-stroke-color: black;
-        text-transform: uppercase;
-        font-weight: bold;
-        text-align: center;
         width: 300px;
-        height: 150px;
     }
 
     #bottomText {
@@ -411,68 +215,29 @@
     #thumbnail, #memecontainer {
         width: 750px;
         height: 750px;
-        float:left;
-        border-top: 10px;
     }
 
     #gridpicture {
-        float: left;
         width:  146px;
         height: 146px;
-        margin: 2px;
-    }
-    #memeListTitle{
-        float: left;
-        padding-left: 70px;
-        margin-top: -10px;
     }
     #libraryButton {
-        float: left;
-        width: 30px;
-        height: 30px;
-        border: none;
         margin-left: 630px;
-        margin-top: 10px;
     }
 
     #cameraButton {
-        float: left;
-        width: 30px;
-        height: 30px;
-        border: none;
         margin-left: 35px;
-        margin-top: 10px;
     }
 
     #topText, #bottomText {
-        float: left;
-        border-style: none;
-        font-size: 2em;
         margin-top: -740px;
-        margin-left: 0px;
-        margin-right: 0px;
-        color: #FFF;
-        background: rgba(255, 255, 255, 0);
-        font-family: Helvetica;
-        color: black;
-       -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-       -webkit-text-stroke-width: 2px;
-       -webkit-text-stroke-color: black;
-        text-transform: uppercase;
-        font-weight: bold;
-        text-align: center;
         width: 750px;
-        height:150px;
     }
 
     #bottomText {
         margin-top: -160px;
     }
     #footer {
-        border-top: 1px solid #C2C2C2;
         margin-top: 900px;
-        margin-right: -8px;
-        margin-left: -8px;
-        padding-left: 15px;
     }
 }
