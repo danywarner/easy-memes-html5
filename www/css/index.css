@@ -1,4 +1,3 @@
-
 #header{
     margin-right: -8px;
     margin-left: -8px;
@@ -40,12 +39,8 @@
     margin-left: 50px;
 }
 
-
-
-
-
 #actionIcon {
-    width:20px;
+    width:30px;
     height:30px;
     padding-top: 6px;
 }
@@ -53,6 +48,79 @@
 #imgcrop {
     border: 1px solid red;
     display: none;
+}
+
+/* #### iPhone 4s */
+@media (device-height: 480px) and (device-width: 320px) {
+    #thumbnail, #memecontainer {
+        width: 300px;
+        height: 300px;
+        float: left;
+        padding-top:10px;
+    }
+    #memeListTitle{
+        float: left;
+        padding-left: 70px;
+        margin-top: -10px;
+    }
+    #libraryButton {
+        float: left;
+        width: 30px;
+        height: 30px;
+        border: none;
+        margin-left: 210px;
+        margin-top: 10px;
+    }
+
+    #cameraButton {
+        float: left;
+        width: 30px;
+        height: 30px;
+        border: none;
+        margin-left: 25px;
+        margin-top: 10px;
+    }
+
+    #gridpicture {
+        float: left;
+        width: 97px;
+        height: 97px;
+        margin: 2px;
+    }
+
+    #topText, #bottomText {
+        float: left;
+        border-style: none;
+        font-size: 2em;
+        margin-top: -300px;
+        margin-left: 0px;
+        margin-right: 0px;
+        color: #FFF;
+        background: rgba(255, 255, 255, 0);
+        font-family: Helvetica;
+        color: black;
+       -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+       -webkit-text-stroke-width: 2px;
+       -webkit-text-stroke-color: black;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        width: 300px;
+        height: 150px;
+    }
+
+    #bottomText {
+        margin-top: -80px;
+        height: 80px;
+    }
+
+    #footer {
+        border-top: 1px solid #C2C2C2;
+        margin-top: 370px;
+        margin-right: -8px;
+        margin-left: -8px;
+        padding-left: 15px;
+    }
 }
 
 
