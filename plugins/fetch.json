@@ -15,5 +15,14 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "com.phonegap.plugins.Flurry": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jfpsf/flurry-phonegap-plugin.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

@@ -48,6 +48,24 @@
                             "xml": false,
                             "count": 1
                         }
+                    ],
+                    "SystemConfiguration.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "CFNetwork.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "Security.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
                     ]
                 }
             },
@@ -64,6 +82,10 @@
                         },
                         {
                             "xml": "<preference name=\"CameraUsesGeolocation\" value=\"false\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"FlurryPlugin\"><param name=\"ios-package\" value=\"FlurryPlugin\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -86,6 +108,9 @@
             "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
         },
         "org.apache.cordova.camera": {
+            "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
+        },
+        "com.phonegap.plugins.Flurry": {
             "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
         }
     },
