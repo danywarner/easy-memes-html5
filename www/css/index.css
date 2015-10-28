@@ -42,13 +42,7 @@
 
 
 
-#footer {
-    border-top: 1px solid #C2C2C2;
-    margin-top: 449px;
-    margin-right: -8px;
-    margin-left: -8px;
-    padding-left: 15px;
-}
+
 
 #actionIcon {
     width:20px;
@@ -125,10 +119,153 @@
         margin-top: -80px;
         height: 80px;
     }
+
+    #footer {
+        border-top: 1px solid #C2C2C2;
+        margin-top: 449px;
+        margin-right: -8px;
+        margin-left: -8px;
+        padding-left: 15px;
+    }
 }
 
-/* #### iPhone 6 and 6 plus Portrait or Landscape #### */
-@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3){
+/* #### iPhone 6 AND 6s */
+@media (min-device-height: 667px) and (min-device-width: 375px) {
+  #thumbnail, #memecontainer {
+        width: 360px;
+        height: 360px;
+        float: left;
+        padding-top:10px;
+    }
+    #memeListTitle{
+        float: left;
+        padding-left: 70px;
+        margin-top: -10px;
+    }
+    #libraryButton {
+        float: left;
+        width: 30px;
+        height: 30px;
+        border: none;
+        margin-left: 265px;
+        margin-top: 10px;
+    }
+
+    #cameraButton {
+        float: left;
+        width: 30px;
+        height: 30px;
+        border: none;
+        margin-left: 25px;
+        margin-top: 10px;
+    }
+
+    #gridpicture {
+        float: left;
+        width: 85px;
+        height: 85px;
+        margin: 2px;
+    }
+
+    #topText, #bottomText {
+        float: left;
+        border-style: none;
+        font-size: 2em;
+        margin-top: -300px;
+        margin-left: 0px;
+        margin-right: 0px;
+        color: #FFF;
+        background: rgba(255, 255, 255, 0);
+        font-family: Helvetica;
+        color: black;
+       -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+       -webkit-text-stroke-width: 2px;
+       -webkit-text-stroke-color: black;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        width: 300px;
+        height: 150px;
+    }
+
+    #bottomText {
+        margin-top: -80px;
+        height: 80px;
+    }
+    #footer {
+        border-top: 1px solid #C2C2C2;
+        margin-top: 555px;
+        margin-right: -8px;
+        margin-left: -8px;
+        padding-left: 15px;
+    }
+}
+/* 6+ AND 6s+ */
+@media (min-device-height: 736px) and (min-device-width: 414px) {
+  #thumbnail, #memecontainer {
+        width: 300px;
+        height: 300px;
+        float: left;
+        padding-top:10px;
+    }
+    #memeListTitle{
+        float: left;
+        padding-left: 70px;
+        margin-top: -10px;
+    }
+    #libraryButton {
+        float: left;
+        width: 30px;
+        height: 30px;
+        border: none;
+        margin-left: 210px;
+        margin-top: 10px;
+    }
+
+    #cameraButton {
+        float: left;
+        width: 30px;
+        height: 30px;
+        border: none;
+        margin-left: 25px;
+        margin-top: 10px;
+    }
+
+    #gridpicture {
+        float: left;
+        width: 95px;
+        height: 95px;
+        margin: 2px;
+    }
+
+    #topText, #bottomText {
+        float: left;
+        border-style: none;
+        font-size: 2em;
+        margin-top: -300px;
+        margin-left: 0px;
+        margin-right: 0px;
+        color: #FFF;
+        background: rgba(255, 255, 255, 0);
+        font-family: Helvetica;
+        color: black;
+       -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+       -webkit-text-stroke-width: 2px;
+       -webkit-text-stroke-color: black;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        width: 300px;
+        height: 150px;
+    }
+
+    #bottomText {
+        margin-top: -80px;
+        height: 80px;
+    }
+}
+/*johan
+@media (min-device-height: 592px) and (min-device-width: 360px) {
   #thumbnail, #memecontainer {
         width: 300px;
         height: 300px;
@@ -176,7 +313,7 @@
         background: rgba(255, 255, 255, 0);
         font-family: Helvetica;
         color: black;
-       -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+       -webkit-text-fill-color: white; /* Will override color (regardless of order) 
        -webkit-text-stroke-width: 2px;
        -webkit-text-stroke-color: black;
         text-transform: uppercase;
@@ -191,6 +328,7 @@
         height: 80px;
     }
 }
+*/
 
 /* #### Tablets Portrait or Landscape #### */
 @media screen and (min-device-width: 768px) and (max-device-width: 1024px){
