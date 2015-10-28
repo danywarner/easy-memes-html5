@@ -50,8 +50,10 @@ function goBackward(){
 function fillGrid(){
     var i = (currentPage - 1) * 45;
     var f = currentPage *45;
-    //var strings = ["1990.jpg", "50corazones.jpg", "advicedog.jpg", "advicegod.jpg", "advicemall.jpg", "agentsmith.jpg", "alegria.jpg", "aliens.jpg", "alto.jpg", "angryarnold.jpg", "angrybaby.jpg", "angrydumbledore.jpg", "angryschool.jpg", "angrywalter.jpg", "aniston.jpg", "antijokechicken.jpg", "anxietycat.jpg", "aoe.jpg", "apathydog.jpg", "aristocat.jpg", "arjona.jpg", "artowl.jpg", "ash.jpg", "asianfather.jpg", "attractiveconv.jpg", "aviatordog.jpg", "awesome.jpg", "awesomeawkward.jpg", "awesometeacher.jpg", "awkwardsocial.jpg", "baby.jpg", "babygodfather.jpg", "babylove.jpg", "backinmyday.jpg", "badadvice.jpg", "badarghippie.jpg", "badas.jpg", "badfactman.jpg", "badluckbrian.jpg", "badspider.jpg", "banderas.jpg", "bane.jpg", "barneystinson.jpg", "barneywin.jpg", "batman.jpg", "batmanslap.jpg", "beargrills.jpg", "beyonce.jpg"]; 
     var memeGrid = document.getElementById("memeGrid");
+    var back = document.getElementById("backwardButton");
+    var fwd = document.getElementById("forwardButton");
+
         while (memeGrid.firstChild) {
         memeGrid.removeChild(memeGrid.firstChild);
     }
@@ -62,24 +64,26 @@ function fillGrid(){
     if(currentString == undefined){
         k=f;
         lastPage = currentPage;
-        var back = document.getElementById("goFwd");
-        back.src = "./img/backward.png";
+        fwd.src = "./icons/backward.png";
         break;
+    }else{
+        fwd.src = "./icons/forward.png";
+        var link = document.createElement("a");
+        link.href = "memeedit.html?meme="+currentString;
+        link.alt = currentString;
+
+        var img = document.createElement("img");
+        img.src = "./img/"+currentString;
+        img.id = "gridpicture";
+        link.appendChild(img);
+        memeGrid.appendChild(link);
     }
-    var link = document.createElement("a");
-    link.href = "memeedit.html?meme="+currentString;
-    link.alt = currentString;
-
-    var img = document.createElement("img");
-    img.src = "./img/"+currentString;
-    img.id = "gridpicture";
-    link.appendChild(img);
-    memeGrid.appendChild(link);
-
     if(currentPage == 1){
-        var back = document.getElementById("goBack");
-        back.src = "./img/forward.png";
+        back.src = "./icons/forward.png";
+    }else{
+        back.src = "./icons/backward.png";
     }
+    document.getElementById("gridFooter").style.visibility = "visible";
 
     }
 }
