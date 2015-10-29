@@ -69,7 +69,8 @@ function fillGrid(){
     }else{
         fwd.src = "./icons/forward.png";
         var link = document.createElement("a");
-        link.href = "memeedit.html?meme="+currentString;
+        link.setAttribute("href","memeedit.html?meme="+currentString);
+       // link.setAttribute("data-transition","slide");
         link.alt = currentString;
 
         var img = document.createElement("img");
@@ -78,6 +79,8 @@ function fillGrid(){
         link.appendChild(img);
         memeGrid.appendChild(link);
     }
+    $('a').attr('data-transition','flip'); 
+
     if(currentPage == 1){
         back.src = "./icons/forward.png";
     }else{
