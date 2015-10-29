@@ -114,7 +114,7 @@ var app = {
             var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
             if (isAndroid) {
                 window.plugins.flurry.startSession('9DKG5Q2D5V7FCS9VNZ78', function () {
-                    alert('AndroidFlurry Success!');
+                    console.log('AndroidFlurry Success!');
                 }, function () {
                     alert('Flurry Error!');
                 });
