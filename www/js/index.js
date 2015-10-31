@@ -37,17 +37,23 @@ function onFail(message) {
 function goForward(){
     if(currentPage < lastPage){
         currentPage += 1;
-        fillGrid();
+        fillGrid(currentPage);
     }
 }
 function goBackward(){
     if(currentPage > 1) {
         currentPage -= 1;
-        fillGrid();
+        fillGrid(currentPage);
     }
 }
 
-function fillGrid(){
+function fillGrid(parameterPage){
+    var src=window.location.href;
+    var a = src.search("currentPage=");
+    if(a != -1 && parameterPage === undefined){
+        a += 12;
+        currentPage = parseInt(src.substring(a,a+1));
+    }
     var i = (currentPage - 1) * 45;
     var f = currentPage *45;
     var memeGrid = document.getElementById("memeGrid");
@@ -61,15 +67,15 @@ function fillGrid(){
     for(k=i;k<f;k++)
     {
     var currentString = strings[k];
-    if(currentString == undefined){
+    if(currentString === undefined){
         k=f;
         lastPage = currentPage;
-        fwd.src = "./icons/forward3.png";
+        fwd.src = "./icons/forward.png";
         break;
     }else{
-        fwd.src = "./icons/forward2.png";
+        fwd.src = "./icons/forward.png";
         var link = document.createElement("a");
-        link.setAttribute("href","memeedit.html?meme="+currentString);
+        link.setAttribute("href","memeedit.html?currentPage="+currentPage+"&meme="+currentString);
         link.setAttribute("data-transition","slide");
         link.alt = currentString;
 
@@ -82,9 +88,9 @@ function fillGrid(){
     //$('a').attr('data-transition','flip'); 
 
     if(currentPage == 1){
-        back.src = "./icons/backward3.png";
+        back.src = "./icons/backward.png";
     }else{
-        back.src = "./icons/backward2.png";
+        back.src = "./icons/backward.png";
     }
     document.getElementById("gridFooter").style.visibility = "visible";
 
@@ -131,7 +137,7 @@ var app = {
                 });
             }
         }
-        else{alert("que paila")}
+        else{alert("que paila");}
         ////FLURRY
         
         fillGrid();

@@ -1,5 +1,6 @@
 var fuente;
 var imageData;
+var currentPage;
 function start(){
 	var memeContainer = document.getElementById("memeContainer");
 	var src=window.location.href;
@@ -29,6 +30,10 @@ function start(){
     bottom.placeholder = "Tap to edit";
     memeContainer.appendChild(bottom);
 
+    var backBtn = document.getElementById("BackToGrid");
+    var i2 = src.search("currentPage=")+12;
+    currentPage = parseInt(src.substring(i2,i2+1));
+    backBtn.href = "index.html?currentPage="+currentPage;
 } 
 
 function wrapText(context, text, x, y, maxWidth, lineHeight) {
