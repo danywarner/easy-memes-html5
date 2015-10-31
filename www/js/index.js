@@ -25,7 +25,7 @@ function getPictureFromLibrary(){
 
 function onSuccess(imageData) { 
     var base64= "data:image/jpeg;base64," + imageData;
-    window.location.replace("memeedit.html?meme=abcxyz.jpg&abcxyz="+base64);
+    window.location.replace("memeedit.html?currentPage="+currentPage+"&meme=abcxyz.jpg&abcxyz="+base64);
     //var image = document.getElementById('thumbnail');
     //image.src = "data:image/jpeg;base64," + imageData;
 }

@@ -1,7 +1,9 @@
 var fuente;
 var imageData;
 var currentPage;
+var userLang;
 function start(){
+    var placeHolderText;
 	var memeContainer = document.getElementById("memeContainer");
 	var src=window.location.href;
 	var i = src.search("meme=")+5;
@@ -20,21 +22,44 @@ function start(){
     img.id = "thumbnail";
     memeContainer.appendChild(img);
 
+    checkLanguage();
+    if(userLang == "en"){
+		placeHolderTopText = "Tap To Edit";
+		placeHolderBtmText = "Tap To Edit";
+    } else if (userLang == "es"){
+    	placeHolderTopText = "Texto superior";
+    	placeHolderBtmText = "Texto inferior";
+    }
+
     var top = document.createElement("textarea");
     top.id = "topText";
-    top.placeholder = "Tap to edit";
+    top.placeholder = placeHolderTopText;
     memeContainer.appendChild(top);
 
     var bottom = document.createElement("textarea");
     bottom.id = "bottomText";
-    bottom.placeholder = "Tap to edit";
+    bottom.placeholder = placeHolderBtmText;
     memeContainer.appendChild(bottom);
 
     var backBtn = document.getElementById("BackToGrid");
-    var i2 = src.search("currentPage=")+12;
-    currentPage = parseInt(src.substring(i2,i2+1));
+    var i3 = src.search("currentPage=")+12;
+    currentPage = parseInt(src.substring(i3,i3+1));
     backBtn.href = "index.html?currentPage="+currentPage;
+    
+
+
 } 
+
+function checkLanguage() {
+	navigator.globalization.getPreferredLanguage(
+        function (language) {
+        	userLang = (language.value).substring(0,2);
+        },
+        function () {
+
+        }
+      );
+}
 
 function wrapText(context, text, x, y, maxWidth, lineHeight) {
         var words = text.split(' ');

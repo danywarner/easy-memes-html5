@@ -87,6 +87,10 @@
                         {
                             "xml": "<feature name=\"FlurryPlugin\"><param name=\"ios-package\" value=\"FlurryPlugin\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Globalization\"><param name=\"ios-package\" value=\"CDVGlobalization\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -111,6 +115,9 @@
             "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
         },
         "com.phonegap.plugins.Flurry": {
+            "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
+        },
+        "cordova-plugin-globalization": {
             "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
         }
     },

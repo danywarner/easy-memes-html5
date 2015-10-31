@@ -13,6 +13,13 @@
     border-top: 1px solid #C2C2C2;
 }
 
+#gridFooter{
+    padding-top: 6px;
+    width: 300px;
+    visibility: hidden;
+    clear:both;
+}
+
 #backwardButton{
     margin-left: 40px;
 }
@@ -21,15 +28,22 @@
     margin-left: 160px;
 }
 
-#gridFooter{
-    padding-top: 6px;
-    width: 300px;
-    visibility: hidden;
+#firstHeader {
+    margin-top: 25px;
     clear:both;
 }
 
-#firstHeader {
-    margin-top: 25px;
+#libraryButton {
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin-left: 190px;
+}
+#cameraButton {
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin-left: 10px;
 }
 
 
@@ -67,22 +81,7 @@
     width: 300px;
     height: 300px;
 }
-#libraryButton {
-    float: left;
-    width: 30px;
-    height: 30px;
-    border: none;
-    margin-left: 210px;
-    margin-top: 10px;
-}
-#cameraButton {
-    float: left;
-    width: 30px;
-    height: 30px;
-    border: none;
-    margin-left: 25px;
-    margin-top: 10px;
-}
+
 #gridpicture {
     float: left;
     width: 97px;
