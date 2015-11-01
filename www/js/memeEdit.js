@@ -61,7 +61,7 @@ function start(){
     img.id = "thumbnail";
 
     ////
-    setTimeout(function(){ adjustSize(img); }, 5);
+    setTimeout(function(){ adjustSize(img); }, 7);
 
     ////
     memeContainer.appendChild(img);
@@ -136,8 +136,7 @@ function crop(){
 	  	var topText = document.getElementById("topText");
 	  	var bottomText = document.getElementById("bottomText");
 	    img.src = src;
-	    setTimeout(function(){ adjustSize(img); }, 5);
-		
+	    setTimeout(function(){ adjustSize(img); }, 7);
 		var w = img.width;
 		var h = img.height;
 		canvas.width = w;
@@ -160,7 +159,8 @@ function crop(){
 		setTimeout(function(){ 
 			window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,'+canvas.toDataURL(), null);
 		}, 5);
-		
+		var img = document.getElementById("imgcrop").style.width = 0;
+		var img = document.getElementById("imgcrop").style.height = 0;
 		
 		//window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,R0lGODlhDAAMALMBAP8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUKAAEALAAAAAAMAAwAQAQZMMhJK7iY4p3nlZ8XgmNlnibXdVqolmhcRQA7', null);
 }

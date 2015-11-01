@@ -72,6 +72,7 @@
 
 #imgcrop {
     display: none;
+    visibility: hidden;
 }
 
  #thumbnail, #memecontainer {
@@ -254,6 +255,7 @@
   #thumbnail, #memecontainer {
         width: 345px;
         height: 345px;
+        margin-top: -70px;
     }
     #libraryButton {
         margin-left: 230px;
@@ -287,7 +289,7 @@
 
     #footer {
         width: 343px;
-        margin-top: 510px;
+        margin-top: 440px;
         margin-right: -17px;
         margin-left: -8px;
 
@@ -302,6 +304,9 @@
         width: 36px;
         margin-left: 240px;
         padding-bottom: 2px;
+    }
+    #header{
+        visibility: hidden;
     }
 }
 
