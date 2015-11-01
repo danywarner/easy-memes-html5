@@ -80,11 +80,13 @@ function start(){
     var top = document.createElement("textarea");
     top.id = "topText";
     top.placeholder = placeHolderTopText;
+    top.addEventListener("keyup", setCropedFalse);
     memeContainer.appendChild(top);
 
     var bottom = document.createElement("textarea");
     bottom.id = "bottomText";
     bottom.placeholder = placeHolderBtmText;
+    bottom.addEventListener("keyup", setCropedFalse);
     memeContainer.appendChild(bottom);
 
     var backBtn = document.getElementById("BackToGrid");
@@ -95,6 +97,10 @@ function start(){
 
 
 } 
+
+function setCropedFalse(){
+	croped = false;
+}
 
 
 
@@ -154,11 +160,15 @@ function crop(){
 
 		img.src = canvas.toDataURL();
 		croped = true;
-		}
-
 		setTimeout(function(){ 
 			window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,'+canvas.toDataURL(), null);
 		}, 5);
+		}
+		else{
+			window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,'+canvas.toDataURL(), null);
+		}
+
+		
 		var img = document.getElementById("imgcrop").style.width = 0;
 		var img = document.getElementById("imgcrop").style.height = 0;
 		
@@ -166,3 +176,4 @@ function crop(){
 }
 
 window.addEventListener("load", start, false);
+
