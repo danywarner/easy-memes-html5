@@ -81,7 +81,7 @@ function fillGrid(parameterPage){
 
         var img = document.createElement("img");
         img.src = "./img/"+currentString;
-        img.id = "gridpicture";
+        img.classList.add('gridpicture');
         link.appendChild(img);
         memeGrid.appendChild(link);
     }

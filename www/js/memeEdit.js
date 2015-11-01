@@ -5,6 +5,7 @@ var userLang;
 function start(){
     var placeHolderText;
 	var memeContainer = document.getElementById("memeContainer");
+	var backText = document.getElementById("BackToGrid");
 	var src=window.location.href;
 	var i = src.search("meme=")+5;
 	var f = src.search(".jpg")+4;
@@ -26,9 +27,11 @@ function start(){
     if(userLang == "en"){
 		placeHolderTopText = "Tap To Edit";
 		placeHolderBtmText = "Tap To Edit";
+		backText.innerHTML = "Back";
     } else if (userLang == "es"){
     	placeHolderTopText = "Texto superior";
     	placeHolderBtmText = "Texto inferior";
+    	backText.innerHTML = "Atrás";
     }
 
     var top = document.createElement("textarea");
