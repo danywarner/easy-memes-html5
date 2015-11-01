@@ -97,6 +97,18 @@ function fillGrid(parameterPage){
     }
 }
 
+function checkLanguage() {
+    navigator.globalization.getPreferredLanguage(
+        function (language) {
+            userLang = (language.value).substring(0,2);
+            window.localStorage.setItem("deviceLanguage", userLang);
+        },
+        function () {
+
+        }
+      );
+}
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -139,7 +151,10 @@ var app = {
         }
         else{alert("que paila");}
         ////FLURRY
-        
+        var userLang = window.localStorage.getItem("deviceLanguage");
+        if(userLang == null){
+            checkLanguage();
+        }
         fillGrid();
    
 

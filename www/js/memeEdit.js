@@ -22,7 +22,7 @@ function start(){
     img.id = "thumbnail";
     memeContainer.appendChild(img);
 
-    checkLanguage();
+    userLang = window.localStorage.getItem("deviceLanguage");
     if(userLang == "en"){
 		placeHolderTopText = "Tap To Edit";
 		placeHolderBtmText = "Tap To Edit";
@@ -50,16 +50,7 @@ function start(){
 
 } 
 
-function checkLanguage() {
-	navigator.globalization.getPreferredLanguage(
-        function (language) {
-        	userLang = (language.value).substring(0,2);
-        },
-        function () {
 
-        }
-      );
-}
 
 function wrapText(context, text, x, y, maxWidth, lineHeight) {
         var words = text.split(' ');
