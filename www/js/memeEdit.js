@@ -68,8 +68,8 @@ function start(){
 
     userLang = window.localStorage.getItem("deviceLanguage");
     if(userLang == "en"){
-		placeHolderTopText = "Tap To Edit";
-		placeHolderBtmText = "Tap To Edit";
+		placeHolderTopText = "Top Text";
+		placeHolderBtmText = "Bottom Text";
 		backText.innerHTML = "Back";
     } else if (userLang == "es"){
     	placeHolderTopText = "Texto superior";
