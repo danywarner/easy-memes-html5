@@ -9,8 +9,8 @@
 
 #memegrid {
     margin-top: 10px;
-    float: left;
-    border-top: 1px solid #C2C2C2;
+   /* float: left;*/
+    border: 3px solid red;
 }
 
 #gridFooter{
@@ -37,7 +37,7 @@
     width: 30px;
     height: 30px;
     border: none;
-    margin-left: 190px;
+    margin-left: 210px;
 }
 #cameraButton {
     width: 30px;
