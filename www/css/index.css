@@ -145,7 +145,7 @@
 }
 
 
-/* #### iPhone 5 Portrait or Landscape #### */
+/* #### iPhone 5 Portrait #### */
 @media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
     
     #footer {

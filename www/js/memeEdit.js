@@ -67,15 +67,32 @@ function start(){
     memeContainer.appendChild(img);
 
     userLang = window.localStorage.getItem("deviceLanguage");
-    if(userLang == "en"){
-		placeHolderTopText = "Top Text";
-		placeHolderBtmText = "Bottom Text";
-		backText.innerHTML = "Back";
-    } else if (userLang == "es"){
+    
+    if (userLang == "es"){
     	placeHolderTopText = "Texto superior";
     	placeHolderBtmText = "Texto inferior";
     	backText.innerHTML = "Atrás";
     }
+    else if(userLang == "de"){
+    	placeHolderTopText = "Top-text";
+    	placeHolderBtmText = "Untertext";
+    	backText.innerHTML = "Zurück";
+    }
+    else if(userLang == "fr"){
+    	placeHolderTopText = "Texte du haut";
+    	placeHolderBtmText = "Texte du bas";
+    	backText.innerHTML = "Précédent";
+    }
+    else if(userLang == "it"){
+    	placeHolderTopText = "Testo superiore";
+    	placeHolderBtmText = "Testo inferiore";
+    	backText.innerHTML = "Indietro";
+    }
+    else {
+		placeHolderTopText = "Top Text";
+		placeHolderBtmText = "Bottom Text";
+		backText.innerHTML = "Back";
+	}
 
     var top = document.createElement("textarea");
     top.id = "topText";
