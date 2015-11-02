@@ -7,6 +7,9 @@ var height;
 var croped = false;
 var canvas = document.getElementById('canvas');
 
+function showInfo(){
+	swal({   title: "Easy Memes v1.0",   text: "Thanks to: Alejandro León<br> Contact: <a href=\"mailto:danywarner@gmail.com\">danywarner@gmail.com</a><br> <a href=\"http://twitter.com/danywarner\" style=\"color:#58a9f1\">@danywarner</a>",   imageUrl: "./icons/raptor180.png", html: true });
+}
 
 function adjustSize(img){
 	var MAX_WIDTH = 300;
