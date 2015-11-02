@@ -183,8 +183,9 @@
         width: 85px;
         height: 85px;
     }
+
      #gridFooter{
-        width: 360px;
+        width: 375px;
     }
 
     #backwardButton{
@@ -192,13 +193,16 @@
     }
 
     #forwardButton{
-        margin-left: 192px;
+        margin-left: 232px;
     }
 
     #topText, #bottomText {
         font-size: 2.2em;
         margin-top: -360px;
         width: 360px;
+    }
+    #bottomText {
+        margin-top: -80px;
     }
 
     #footer {
@@ -229,7 +233,8 @@
     }
 
     #gridFooter{
-        width: 390px;
+        width: 420px;
+
     }
     
     #backwardButton{
@@ -246,7 +251,7 @@
     }
 
     #bottomText {
-        margin-top: -75px;
+        margin-top: -78px;
     }
      #footer {
         margin-top: 630px;
@@ -258,8 +263,72 @@
     }
 
 }
+
+
+
+/* #### Tablets Portrait or Landscape #### */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+
+    #thumbnail, #memecontainer {
+        width: 750px;
+        height: 750px;
+    }
+
+    .gridpicture {
+        width:  146px;
+        height: 146px;
+    }
+
+    #gridFooter{
+        margin-left: -8px;
+        margin-right: -8px;
+        width: 770px;
+    }
+
+    #backwardButton{
+        margin-left: 60px;
+    }
+
+    #forwardButton{
+        margin-left: 582px;
+    }
+
+    #libraryButton {
+        margin-left: 630px;
+    }
+
+    #cameraButton {
+        margin-left: 35px;
+    }
+
+    #topText, #bottomText {
+        margin-top: -740px;
+        width: 750px;
+    }
+
+    #bottomText {
+        margin-top: -160px;
+    }
+    
+    #footer {
+        margin-top: 900px;
+        
+    }
+    #actionIcon {
+        width: 28px;
+        padding-top: 7px;
+        margin-left: 20px;
+    }
+
+    #infoButton{
+        width: 36px;
+        margin-left: 630px;
+        padding-bottom: 2px;
+    }
+}
+
 /*johan*/
-@media (min-device-height: 592px) and (min-device-width: 360px) {
+@media (device-height: 592px) and (device-width: 360px) {
   #thumbnail, #memecontainer {
         width: 345px;
         height: 345px;
@@ -315,65 +384,5 @@
     }
     #header{
         visibility: hidden;
-    }
-}
-
-
-/* #### Tablets Portrait or Landscape #### */
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px){
-
-    #thumbnail, #memecontainer {
-        width: 750px;
-        height: 750px;
-    }
-
-    .gridpicture {
-        width:  146px;
-        height: 146px;
-    }
-
-    #gridFooter{
-        width: 740px;
-    }
-
-    #backwardButton{
-        margin-left: 60px;
-    }
-
-    #forwardButton{
-        margin-left: 542px;
-    }
-
-    #libraryButton {
-        margin-left: 630px;
-    }
-
-    #cameraButton {
-        margin-left: 35px;
-    }
-
-    #topText, #bottomText {
-        margin-top: -740px;
-        width: 750px;
-    }
-
-    #bottomText {
-        margin-top: -160px;
-    }
-    
-    #footer {
-        margin-top: 900px;
-        
-    }
-    #actionIcon {
-        width: 28px;
-        padding-top: 7px;
-        margin-left: 20px;
-    }
-
-    #infoButton{
-        width: 36px;
-        margin-left: 630px;
-        padding-bottom: 2px;
     }
 }

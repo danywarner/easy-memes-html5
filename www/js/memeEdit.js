@@ -61,7 +61,7 @@ function start(){
     img.id = "thumbnail";
 
     ////
-    setTimeout(function(){ adjustSize(img); }, 7);
+    setTimeout(function(){ adjustSize(img); }, 10);
 
     ////
     memeContainer.appendChild(img);

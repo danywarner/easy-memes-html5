@@ -70,7 +70,7 @@ function fillGrid(parameterPage){
     if(currentString === undefined){
         k=f;
         lastPage = currentPage;
-        fwd.src = "./icons/forward.png";
+        fwd.src = "./icons/forward2.png";
         break;
     }else{
         fwd.src = "./icons/forward.png";
@@ -88,7 +88,7 @@ function fillGrid(parameterPage){
     //$('a').attr('data-transition','flip'); 
 
     if(currentPage == 1){
-        back.src = "./icons/backward.png";
+        back.src = "./icons/backward2.png";
     }else{
         back.src = "./icons/backward.png";
     }
