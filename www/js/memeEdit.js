@@ -177,12 +177,13 @@ function crop(){
 
 		img.src = canvas.toDataURL();
 		croped = true;
+		var base = canvas.toDataURL();
 		setTimeout(function(){ 
-			window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,'+canvas.toDataURL(), null);
+			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+base, null);
 		}, 5);
 		}
 		else{
-			window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,'+canvas.toDataURL(), null);
+			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+base, null);
 		}
 
 		
@@ -190,6 +191,9 @@ function crop(){
 		var img = document.getElementById("imgcrop").style.height = 0;
 		
 		//window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,R0lGODlhDAAMALMBAP8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUKAAEALAAAAAAMAAwAQAQZMMhJK7iY4p3nlZ8XgmNlnibXdVqolmhcRQA7', null);
+		
+		//window.plugins.socialsharing.share(null, null, 'https://www.google.nl/images/srpr/logo4w.png', null);
+
 }
 
 window.addEventListener("load", start, false);

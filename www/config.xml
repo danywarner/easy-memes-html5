@@ -2,11 +2,14 @@
 <widget id="com.gmail.danywarner.easymemes" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Easy Memes</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Meme Creator Application
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="danywarner@gmail.com" href="http://about.me/danywarner">
+        Daniel Warner
     </author>
+    <feature name="SocialSharing">
+      <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+    </feature>
     <preference name="permissions" value="none" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="phonegap-version" value="3.5.0" />
@@ -22,7 +25,7 @@
     <preference name="show-splash-screen-spinner" value="true" />
     <preference name="auto-hide-splash-screen" value="true" />
     <preference name="disable-cursor" value="false" />
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-minSdkVersion" value="21" />
     <preference name="android-installLocation" value="auto" />
     <gap:plugin name="org.apache.cordova.battery-status" />
     <gap:plugin name="org.apache.cordova.camera" />
