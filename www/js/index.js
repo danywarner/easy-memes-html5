@@ -151,13 +151,15 @@ var app = {
             var ua = navigator.userAgent.toLowerCase();
             var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
             if (isAndroid) {
-                window.plugins.flurry.startSession('9DKG5Q2D5V7FCS9VNZ78', function () {
+                var androidKey = getAndroidKey();
+                window.plugins.flurry.startSession(androidKey, function () {
                     console.log('AndroidFlurry Success!');
                 }, function () {
                     alert('Flurry Error!');
                 });
             } else {
-                window.plugins.flurry.startSession('ZTBX74SQK38TZ7KC9KFY', function () {
+                var iOSKey = getiOSKey();
+                window.plugins.flurry.startSession(iOSKey, function () {
                     console.log('iOS Flurry Success!');
                     window.plugins.flurry.setSessionReportsOnCloseEnabled(true); // iOS only
                     window.plugins.flurry.setSessionReportsOnPauseEnabled(true); // iOS only
