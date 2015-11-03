@@ -166,10 +166,6 @@ function wrapText(context, text, x, y, maxWidth, lineHeight) {
 }
 
 
-function shared(){
-	alert("compartido")
-}
-
 function crop(){
 		if(croped === false){
 		var src=fuente;
@@ -206,11 +202,11 @@ function crop(){
 		img.src = canvas.toDataURL();
 		croped = true;
 		setTimeout(function(){ 
-			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+canvas.toDataURL(), null,shared,null);
+			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+canvas.toDataURL(), null);
 		}, 5);
 		}
 		else{
-			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+canvas.toDataURL(), null,shared,null);
+			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+canvas.toDataURL(), null);
 		}
 
 		

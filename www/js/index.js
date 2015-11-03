@@ -168,7 +168,7 @@ var app = {
                 });
             }
         }
-        else{alert("que paila");}
+        else{console.log("que paila");}
         ////FLURRY
         var userLang = window.localStorage.getItem("deviceLanguage");
         if(userLang === null){

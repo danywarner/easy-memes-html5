@@ -66,6 +66,12 @@
                             "xml": false,
                             "count": 1
                         }
+                    ],
+                    "QuartzCore.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
                     ]
                 }
             },
@@ -90,6 +96,10 @@
                         },
                         {
                             "xml": "<preference name=\"CameraUsesGeolocation\" value=\"false\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Toast\"><param name=\"ios-package\" value=\"Toast\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -118,6 +128,9 @@
             "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
         },
         "org.apache.cordova.camera": {
+            "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
+        },
+        "cordova-plugin-x-toast": {
             "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
         }
     },
