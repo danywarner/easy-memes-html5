@@ -45,7 +45,7 @@ function adjustSize(img){
 	document.getElementById("topText").style.display = "inherit";
 	document.getElementById("bottomText").style.display = "inherit";
 	if(wide === true){
-		document.getElementById("topText").style.marginTop = "-220px";
+		document.getElementById("topText").style.marginTop = "-"+height+"px";
 	}
 }
 
@@ -70,7 +70,7 @@ function start(){
     img.id = "thumbnail";
 
     ////hacerlo siempre. en las precargadas se bloquea si se intenta hacer de otra forma
-    setTimeout(function(){ adjustSize(img); }, 50);
+    setTimeout(function(){ adjustSize(img); }, 100);
 
     ////
     memeContainer.appendChild(img);
@@ -102,15 +102,27 @@ function start(){
 		placeHolderBtmText = "Bottom Text";
 		backText.innerHTML = "Back";
 	}
-
+	
     var top = document.createElement("textarea");
+    var bottom = document.createElement("textarea");
     top.id = "topText";
+    bottom.id = "bottomText";
+    if(screen.width == 768){
+	    	var fontSize = "44px";
+	    	top.style.fontSize = fontSize;
+	    	bottom.style.fontSize = fontSize;
+	}
+	else if(screen.width == 414){
+	    	var fontSize = "40px";
+	    	top.style.fontSize = fontSize;
+	    	bottom.style.fontSize = fontSize;
+	}
     top.placeholder = placeHolderTopText;
     top.addEventListener("keyup", setCropedFalse);
     memeContainer.appendChild(top);
 
-    var bottom = document.createElement("textarea");
-    bottom.id = "bottomText";
+    
+    
     bottom.placeholder = placeHolderBtmText;
     bottom.addEventListener("keyup", setCropedFalse);
     memeContainer.appendChild(bottom);
@@ -168,14 +180,18 @@ function crop(){
 	  	var topText = document.getElementById("topText");
 	  	var bottomText = document.getElementById("bottomText");
 	    img.src = src;
-	    setTimeout(function(){ adjustSize(img); }, 50);
+	    setTimeout(function(){ adjustSize(img); }, 100);
 		var w = img.width;
 		var h = img.height;
 		canvas.width = w;
 	    canvas.height = h;
 		var ctx = canvas.getContext('2d');
 	    ctx.drawImage(img, 0,0,w,h, 0,0,w,h);
-	    ctx.font = 'bold 53px Helvetica';
+	    var fontSize = 53;
+	    if(screen.width == 768){
+	    	fontSize = 30;
+	    }
+	    ctx.font = 'bold '+fontSize+'px Helvetica';
 	    ctx.lineWidth = 2;
 		ctx.strokeStyle = "black";
     	ctx.textAlign = 'center';

@@ -48,7 +48,7 @@ function goBackward(){
 }
 
 function fillGrid(parameterPage){
-    alert("W: "+screen.width+" h: "+screen.height);
+    //alert("W: "+screen.width+" h: "+screen.height);
     
     var src=window.location.href;
     var a = src.search("currentPage=");
