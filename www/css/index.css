@@ -73,11 +73,14 @@
 
  #thumbnail, #memecontainer {
     float: left;
-    padding-top:10px;
+    padding-top:9px;
 }
 
 #thumbnail{
     display:none;
+    border: 1px solid #c2c2c2;
+    margin-top: 10px;
+    padding-top: 0px;
 }
 
 .gridpicture {
@@ -85,6 +88,7 @@
     width: 97px;
     height: 97px;
     margin: 2px;
+    border: 1px solid #c2c2c2;
 }
 
 #topText, #bottomText {
@@ -275,8 +279,8 @@
     }
 
     .gridpicture {
-        width:  146px;
-        height: 146px;
+        width:  144px;
+        height: 144px;
     }
 
     #gridFooter{
