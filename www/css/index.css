@@ -122,7 +122,7 @@
     }
 
 /* #### iPhone 4s */
-@media (device-height: 480px) and (device-width: 320px) {
+@media (device-width: 320px) and (device-height: 480px) {
 
     #footer {
         margin-top: 370px;
@@ -147,7 +147,7 @@
 
 
 /* #### iPhone 5 Portrait #### */
-@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+@media (device-width: 320px) and (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
     
     #footer {
         margin-top: 438px;
@@ -170,7 +170,7 @@
 }
 
 /* #### iPhone 6 AND 6s */
-@media (min-device-height: 667px) and (min-device-width: 375px) {
+@media (min-device-width: 375px) and (min-device-height: 667px) {
   #thumbnail, #memecontainer {
         width: 360px;
         height: 360px;
@@ -218,7 +218,7 @@
     }
 }
 /* 6+ AND 6s+ */
-@media (min-device-height: 736px) and (min-device-width: 414px) {
+@media (min-device-width: 414px) and (min-device-height: 736px) {
   #thumbnail, #memecontainer {
         width: 397px;
         height: 397px;
@@ -328,7 +328,7 @@
 }
 
 /*johan*/
-@media (device-height: 592px) and (device-width: 360px) {
+@media (device-width: 360px) and (device-height: 592px) {
   #thumbnail, #memecontainer {
         width: 345px;
         height: 345px;
@@ -336,6 +336,67 @@
     }
     #libraryButton {
         margin-left: 230px;
+    }
+
+    .gridpicture {
+        width: 110px;
+        height: 110px;
+    }
+
+    #topText, #bottomText {
+        margin-top: -340px;
+        width: 340px;
+    }
+
+    #bottomText {
+        margin-top: -80px;
+        height: 80px;
+    }
+    #gridFooter{
+        width: 340px;
+    }
+    
+    #backwardButton{
+        margin-left: 40px;
+    }
+
+    #forwardButton{
+        margin-left: 202px;
+    }
+
+    #footer {
+        width: 343px;
+        margin-top: 440px;
+        margin-right: -17px;
+        margin-left: -8px;
+
+    }
+      #actionIcon {
+        width: 38px;
+        padding-top: 8px;
+        content: url(../icons/share.png);
+    }
+
+    #infoButton{
+        width: 36px;
+        margin-left: 240px;
+        padding-bottom: 2px;
+    }
+    #header{
+        visibility: hidden;
+    }
+}
+
+/*Galaxy S5 - S4 - Nexus 5 - HTC One - Xperia Z -Z3 -...*/
+@media (device-width: 360px) and (device-height: 640px) {
+  #thumbnail, #memecontainer {
+        width: 345px;
+        height: 345px;
+        margin-top: -70px;
+    }
+    #libraryButton {
+        margin-left: 30px;
+        visibility: hidden;
     }
 
     .gridpicture {

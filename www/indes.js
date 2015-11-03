@@ -48,8 +48,8 @@ function goBackward(){
 }
 
 function fillGrid(parameterPage){
-    alert("W: "+screen.width+" h: "+screen.height);
     
+     alert("W: "+screen.width+" h: "+screen.height);
     var src=window.location.href;
     var a = src.search("currentPage=");
     if(a != -1 && parameterPage === undefined){
@@ -72,7 +72,7 @@ function fillGrid(parameterPage){
         
     }
     var i = (currentPage - 1) * xpictures;
-    var f = currentPage * xpictures;
+    var f = currentPage *xpictures;
     var memeGrid = document.getElementById("memeGrid");
     var back = document.getElementById("backwardButton");
     var fwd = document.getElementById("forwardButton");
@@ -114,82 +114,5 @@ function fillGrid(parameterPage){
     }
 }
 
-function checkLanguage() {
-    navigator.globalization.getPreferredLanguage(
-        function (language) {
-            userLang = (language.value).substring(0,2);
-            window.localStorage.setItem("deviceLanguage", userLang);
-        },
-        function () {
 
-        }
-      );
-}
-
-var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    getStrings: function() {
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-         ////FLURRY
-        if (window.plugins && window.plugins.flurry) {
-            var ua = navigator.userAgent.toLowerCase();
-            var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-            if (isAndroid) {
-                window.plugins.flurry.startSession('9DKG5Q2D5V7FCS9VNZ78', function () {
-                    console.log('AndroidFlurry Success!');
-                }, function () {
-                    alert('Flurry Error!');
-                });
-            } else {
-                window.plugins.flurry.startSession('ZTBX74SQK38TZ7KC9KFY', function () {
-                    console.log('iOS Flurry Success!');
-                    window.plugins.flurry.setSessionReportsOnCloseEnabled(true); // iOS only
-                    window.plugins.flurry.setSessionReportsOnPauseEnabled(true); // iOS only
-                }, function () {
-                    alert('Flurry Error!');
-                });
-            }
-        }
-        else{alert("que paila");}
-        ////FLURRY
-        var userLang = window.localStorage.getItem("deviceLanguage");
-        if(userLang === null){
-            checkLanguage();
-        }
-        fillGrid();
-   
-
-
-    },
-
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-
-       
-
-    }
-};
+window.addEventListener("load", fillGrid, false);
