@@ -7,6 +7,24 @@
         "files": {
             "framework": {
                 "parents": {
+                    "SystemConfiguration.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "CFNetwork.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "Security.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
                     "Social.framework": [
                         {
                             "xml": true,
@@ -48,30 +66,20 @@
                             "xml": false,
                             "count": 1
                         }
-                    ],
-                    "SystemConfiguration.framework": [
-                        {
-                            "xml": false,
-                            "count": 1
-                        }
-                    ],
-                    "CFNetwork.framework": [
-                        {
-                            "xml": false,
-                            "count": 1
-                        }
-                    ],
-                    "Security.framework": [
-                        {
-                            "xml": false,
-                            "count": 1
-                        }
                     ]
                 }
             },
             "config.xml": {
                 "parents": {
                     "/*": [
+                        {
+                            "xml": "<feature name=\"FlurryPlugin\"><param name=\"ios-package\" value=\"FlurryPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Globalization\"><param name=\"ios-package\" value=\"CDVGlobalization\" /></feature>",
+                            "count": 1
+                        },
                         {
                             "xml": "<feature name=\"SocialSharing\"><param name=\"ios-package\" value=\"SocialSharing\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
@@ -82,14 +90,6 @@
                         },
                         {
                             "xml": "<preference name=\"CameraUsesGeolocation\" value=\"false\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"FlurryPlugin\"><param name=\"ios-package\" value=\"FlurryPlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Globalization\"><param name=\"ios-package\" value=\"CDVGlobalization\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -108,16 +108,16 @@
         }
     },
     "installed_plugins": {
-        "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
-        },
-        "org.apache.cordova.camera": {
-            "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
-        },
         "com.phonegap.plugins.Flurry": {
             "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
         },
         "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
+        },
+        "org.apache.cordova.camera": {
             "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
         }
     },

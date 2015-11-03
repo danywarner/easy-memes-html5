@@ -107,13 +107,14 @@ function start(){
     var bottom = document.createElement("textarea");
     top.id = "topText";
     bottom.id = "bottomText";
+    var fontSize = "44px";
     if(screen.width == 768){
-	    	var fontSize = "44px";
+	    	fontSize = "44px";
 	    	top.style.fontSize = fontSize;
 	    	bottom.style.fontSize = fontSize;
 	}
 	else if(screen.width == 414){
-	    	var fontSize = "40px";
+	    	fontSize = "40px";
 	    	top.style.fontSize = fontSize;
 	    	bottom.style.fontSize = fontSize;
 	}
@@ -165,7 +166,9 @@ function wrapText(context, text, x, y, maxWidth, lineHeight) {
 }
 
 
-
+function shared(){
+	alert("compartido")
+}
 
 function crop(){
 		if(croped === false){
@@ -203,11 +206,11 @@ function crop(){
 		img.src = canvas.toDataURL();
 		croped = true;
 		setTimeout(function(){ 
-			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+canvas.toDataURL(), null);
+			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+canvas.toDataURL(), null,shared,null);
 		}, 5);
 		}
 		else{
-			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+canvas.toDataURL(), null);
+			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+canvas.toDataURL(), null,shared,null);
 		}
 
 		
