@@ -152,7 +152,7 @@ var app = {
         else{alert("que paila");}
         ////FLURRY
         var userLang = window.localStorage.getItem("deviceLanguage");
-        if(userLang == null){
+        if(userLang === null){
             checkLanguage();
         }
         fillGrid();

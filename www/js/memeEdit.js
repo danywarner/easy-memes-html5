@@ -8,7 +8,13 @@ var croped = false;
 var canvas = document.getElementById('canvas');
 
 function showInfo(){
-	swal({   title: "Easy Memes v1.0",   text: "Thanks to: Alejandro León<br> Contact: <a href=\"mailto:danywarner@gmail.com\">danywarner@gmail.com</a><br> <a href=\"http://twitter.com/danywarner\" style=\"color:#58a9f1\">@danywarner</a>",   imageUrl: "./icons/raptor180.png", html: true });
+	userLang = window.localStorage.getItem("deviceLanguage");
+	if(userLang == "es"){
+		swal({   title: "Easy Memes v1.0",   text: "Agradecimientos: Alejandro León<br> Contacto: <a href=\"mailto:danywarner@gmail.com\">danywarner@gmail.com</a><br> Twitter: <a href=\"http://twitter.com/danywarner\" style=\"color:#58a9f1\">@danywarner</a>",   imageUrl: "./icons/raptor180.png", html: true });
+	}else{
+		swal({   title: "Easy Memes v1.0",   text: "Thanks to: Alejandro León<br> Contact: <a href=\"mailto:danywarner@gmail.com\">danywarner@gmail.com</a><br> Twitter: <a href=\"http://twitter.com/danywarner\" style=\"color:#58a9f1\">@danywarner</a>",   imageUrl: "./icons/raptor180.png", html: true });
+	}
+	
 }
 
 function adjustSize(img){
@@ -38,7 +44,7 @@ function adjustSize(img){
 	img.style.display = "inherit";
 	document.getElementById("topText").style.display = "inherit";
 	document.getElementById("bottomText").style.display = "inherit";
-	if(wide == true){
+	if(wide === true){
 		document.getElementById("topText").style.marginTop = "-220px";
 	}
 }
@@ -63,8 +69,8 @@ function start(){
     }
     img.id = "thumbnail";
 
-    ////
-    setTimeout(function(){ adjustSize(img); }, 10);
+    ////hacerlo siempre. en las precargadas se bloquea si se intenta hacer de otra forma
+    setTimeout(function(){ adjustSize(img); }, 50);
 
     ////
     memeContainer.appendChild(img);
@@ -150,7 +156,7 @@ function wrapText(context, text, x, y, maxWidth, lineHeight) {
 
 
 function crop(){
-		if(croped == false){
+		if(croped === false){
 		var src=fuente;
 		if(src!="abcxyz.jpg"){
   			src = "img/"+src;
@@ -162,7 +168,7 @@ function crop(){
 	  	var topText = document.getElementById("topText");
 	  	var bottomText = document.getElementById("bottomText");
 	    img.src = src;
-	    setTimeout(function(){ adjustSize(img); }, 7);
+	    setTimeout(function(){ adjustSize(img); }, 50);
 		var w = img.width;
 		var h = img.height;
 		canvas.width = w;
@@ -180,18 +186,17 @@ function crop(){
 
 		img.src = canvas.toDataURL();
 		croped = true;
-		var base = canvas.toDataURL();
 		setTimeout(function(){ 
-			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+base, null);
+			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+canvas.toDataURL(), null);
 		}, 5);
 		}
 		else{
-			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+base, null);
+			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+canvas.toDataURL(), null);
 		}
 
 		
-		var img = document.getElementById("imgcrop").style.width = 0;
-		var img = document.getElementById("imgcrop").style.height = 0;
+		document.getElementById("imgcrop").style.width = 0;
+		document.getElementById("imgcrop").style.height = 0;
 		
 		//window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,R0lGODlhDAAMALMBAP8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUKAAEALAAAAAAMAAwAQAQZMMhJK7iY4p3nlZ8XgmNlnibXdVqolmhcRQA7', null);
 		
