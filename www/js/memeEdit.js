@@ -220,4 +220,3 @@ function crop(){
 }
 
 window.addEventListener("load", start, false);
-
