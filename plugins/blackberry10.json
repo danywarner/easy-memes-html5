@@ -1,0 +1,52 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "www/config.xml": {
+                "parents": {
+                    "/widget": [
+                        {
+                            "xml": "<feature name=\"Toast\" value=\"Toast\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Camera\" value=\"Camera\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/widget/rim:permissions": [
+                        {
+                            "xml": "<rim:permit>access_shared</rim:permit>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<rim:permit>use_camera</rim:permit>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.phonegap.plugins.Flurry": {
+            "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
+        },
+        "org.apache.cordova.camera": {
+            "PACKAGE_NAME": "com.gmail.danywarner.easymemes"
+        }
+    },
+    "dependent_plugins": {}
+}
