@@ -4,9 +4,10 @@ var currentPage;
 var userLang;
 var width;
 var height;
-var croped = false;
 var canvas = document.getElementById('canvas');
-
+var base64;
+var cropped = false;
+var sizeStored = false;
 function showInfo(){
 	userLang = window.localStorage.getItem("deviceLanguage");
 	if(userLang == "es"){
@@ -20,8 +21,8 @@ function showInfo(){
 function adjustSize(img){
 	var MAX_WIDTH = 300;
 	var MAX_HEIGHT = 300;
-	var wide = false;
 	var high = false;
+	var wide = false;
 	width = img.width;
 	height = img.height;
 
@@ -41,15 +42,22 @@ function adjustSize(img){
 	//alert("W: "+width+" H: "+height);
 	img.width = width;
 	img.height = height;
+	
 	img.style.display = "inherit";
+	/*if(cropped == true && sizeStored == false){
+		sizeStored = true;
+		window.localStorage.setItem("width", width);
+		window.localStorage.setItem("height", height);
+	}*/
 	document.getElementById("topText").style.display = "inherit";
 	document.getElementById("bottomText").style.display = "inherit";
-	if(wide === true){
+	if(wide === true ){
 		document.getElementById("topText").style.marginTop = "-"+height+"px";
 	}
 }
 
 function start(){
+	cropped = false;
     var placeHolderText;
 	var memeContainer = document.getElementById("memeContainer");
 	var backText = document.getElementById("BackToGrid");
@@ -107,7 +115,9 @@ function start(){
     var bottom = document.createElement("textarea");
     top.id = "topText";
     bottom.id = "bottomText";
-    var fontSize = "44px";
+    var fontSize = "30px";
+    top.style.fontSize = fontSize;
+	bottom.style.fontSize = fontSize;
     if(screen.width == 768){
 	    	fontSize = "44px";
 	    	top.style.fontSize = fontSize;
@@ -138,7 +148,7 @@ function start(){
 } 
 
 function setCropedFalse(){
-	croped = false;
+	cropped = false;
 }
 
 
@@ -167,7 +177,8 @@ function wrapText(context, text, x, y, maxWidth, lineHeight) {
 
 
 function crop(){
-		if(croped === false){
+		if(cropped == false){
+			cropped = true;
 		var src=fuente;
 		if(src!="abcxyz.jpg"){
   			src = "img/"+src;
@@ -184,9 +195,20 @@ function crop(){
 		var h = img.height;
 		canvas.width = w;
 	    canvas.height = h;
+	    //alert("W: "+w+" h: "+h);
 		var ctx = canvas.getContext('2d');
 	    ctx.drawImage(img, 0,0,w,h, 0,0,w,h);
-	    var fontSize = 50;
+	    var wideImg = false;
+	    if(w>h){
+	    	wideImg = true;
+	    }
+	    var fontSize = 50*(h/500);
+	    if(wideImg == true){
+	    	fontSize = 50*((h+100)/500);
+	    }
+	    /*if(wide === true){
+	    	fontSize = 50*((h+100)/500);
+	    }*/
 	    if(screen.width == 768){
 	    	fontSize = 30;
 	    }
@@ -197,19 +219,19 @@ function crop(){
     	ctx.fillStyle = "#ffffff";
 
     	wrapText(ctx, topText.value.toUpperCase(), w/2, 53, w, 60);
-		wrapText(ctx, bottomText.value.toUpperCase(), w/2, h*0.84, w, 60); 
+		wrapText(ctx, bottomText.value.toUpperCase(), w/2, h*0.82, w, 60); 
 
-		img.src = canvas.toDataURL();
-		croped = true;
-		setTimeout(function(){ 
+		//img.src = canvas.toDataURL();
+		/*setTimeout(function(){ 
 			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+canvas.toDataURL(), null);
-		}, 5);
+		}, 5);*/
+		base64=canvas.toDataURL();
+		window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+base64, null);
+		//window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,R0lGODlhDAAMALMBAP8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUKAAEALAAAAAAMAAwAQAQZMMhJK7iY4p3nlZ8XgmNlnibXdVqolmhcRQA7', null);
 		}
 		else{
-			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+canvas.toDataURL(), null);
+			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+base64, null);
 		}
-
-		
 		document.getElementById("imgcrop").style.width = 0;
 		document.getElementById("imgcrop").style.height = 0;
 		
