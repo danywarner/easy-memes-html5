@@ -7,7 +7,8 @@ var height;
 var canvas = document.getElementById('canvas');
 var base64;
 var cropped = false;
-var sizeStored = false;
+var srcSet = false;
+var imgCrop;
 function showInfo(){
 	userLang = window.localStorage.getItem("deviceLanguage");
 	if(userLang == "es"){
@@ -58,7 +59,9 @@ function adjustSize(img){
 
 function start(){
 	cropped = false;
+	window.sessionStorage.clear();
     var placeHolderText;
+    imgCrop = document.getElementById("imgcrop");
 	var memeContainer = document.getElementById("memeContainer");
 	var backText = document.getElementById("BackToGrid");
 	var src=window.location.href;
@@ -179,25 +182,37 @@ function wrapText(context, text, x, y, maxWidth, lineHeight) {
 function crop(){
 		if(cropped == false){
 			cropped = true;
-		var src=fuente;
-		if(src!="abcxyz.jpg"){
-  			src = "img/"+src;
+			if(srcSet == false){
+				var srcCrop=fuente;
+				if(srcCrop!="abcxyz.jpg"){
+		  			srcCrop = "img/"+srcCrop;
+		  			
+				}
+				else{
+					srcCrop = imageData;
+				}
+				imgCrop.src = srcCrop;
+				srcSet = true;
+	  	}
+	    var topText = document.getElementById("topText");
+		var bottomText = document.getElementById("bottomText");
+	    setTimeout(function(){ adjustSize(imgCrop); }, 100);
+		var w = imgCrop.width;
+		var h = imgCrop.height;
+		if(w>0){
+			window.sessionStorage.setItem("width", w);
+			window.sessionStorage.setItem("height", h); 
+		}else{
+			w = window.sessionStorage.getItem("width");
+			h = window.sessionStorage.getItem("height");
+			imgCrop.width = w;
+			imgCrop.height = h;
 		}
-		else{
-			src = imageData;
-		}
-	  	var img = document.getElementById("imgcrop");
-	  	var topText = document.getElementById("topText");
-	  	var bottomText = document.getElementById("bottomText");
-	    img.src = src;
-	    setTimeout(function(){ adjustSize(img); }, 100);
-		var w = img.width;
-		var h = img.height;
 		canvas.width = w;
 	    canvas.height = h;
 	    //alert("W: "+w+" h: "+h);
 		var ctx = canvas.getContext('2d');
-	    ctx.drawImage(img, 0,0,w,h, 0,0,w,h);
+	    ctx.drawImage(imgCrop, 0,0,w,h, 0,0,w,h);
 	    var wideImg = false;
 	    if(w>h){
 	    	wideImg = true;
