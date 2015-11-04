@@ -180,19 +180,18 @@ function wrapText(context, text, x, y, maxWidth, lineHeight) {
 
 
 function crop(){
-		if(cropped == false){
-			cropped = true;
-			if(srcSet == false){
-				var srcCrop=fuente;
-				if(srcCrop!="abcxyz.jpg"){
-		  			srcCrop = "img/"+srcCrop;
-		  			
-				}
-				else{
-					srcCrop = imageData;
-				}
-				imgCrop.src = srcCrop;
-				srcSet = true;
+	if(cropped == false){
+		cropped = true;
+		if(srcSet == false){
+			var srcCrop=fuente;
+			if(srcCrop!="abcxyz.jpg"){
+		  		srcCrop = "img/"+srcCrop;
+		  	}
+			else{
+				srcCrop = imageData;
+			}
+			imgCrop.src = srcCrop;
+			srcSet = true;
 	  	}
 	    var topText = document.getElementById("topText");
 		var bottomText = document.getElementById("bottomText");
@@ -213,17 +212,10 @@ function crop(){
 	    //alert("W: "+w+" h: "+h);
 		var ctx = canvas.getContext('2d');
 	    ctx.drawImage(imgCrop, 0,0,w,h, 0,0,w,h);
-	    var wideImg = false;
-	    if(w>h){
-	    	wideImg = true;
-	    }
 	    var fontSize = 50*(h/500);
-	    if(wideImg == true){
+	    if(w > h){
 	    	fontSize = 50*((h+100)/500);
 	    }
-	    /*if(wide === true){
-	    	fontSize = 50*((h+100)/500);
-	    }*/
 	    if(screen.width == 768){
 	    	fontSize = 30;
 	    }
@@ -243,12 +235,11 @@ function crop(){
 		base64=canvas.toDataURL();
 		window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+base64, null);
 		//window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,R0lGODlhDAAMALMBAP8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUKAAEALAAAAAAMAAwAQAQZMMhJK7iY4p3nlZ8XgmNlnibXdVqolmhcRQA7', null);
-		}
-		else{
-			window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+base64, null);
-		}
-		document.getElementById("imgcrop").style.width = 0;
-		document.getElementById("imgcrop").style.height = 0;
+	}else{
+		window.plugins.socialsharing.share(null, 'Android', 'data:image/jpeg;base64,'+base64, null);
+	}
+	document.getElementById("imgcrop").style.width = 0;
+	document.getElementById("imgcrop").style.height = 0;
 		
 		//window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,R0lGODlhDAAMALMBAP8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUKAAEALAAAAAAMAAwAQAQZMMhJK7iY4p3nlZ8XgmNlnibXdVqolmhcRQA7', null);
 		
